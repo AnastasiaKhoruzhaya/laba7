@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _5lab
+namespace _6lab
 {
     interface IOperationSet
     {

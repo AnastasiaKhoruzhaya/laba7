@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _5lab
+namespace _6lab
 {
-    class Organization : IOperationSet
+    partial class Organization : IOperationSet//класс partial в первом файле
     {
-        public override string ToString()
-        {
-            return "Organization";
-        }
         string[] IOperationSet.Operations()
         {
             return new string[] { "wow, it's a true company class" };

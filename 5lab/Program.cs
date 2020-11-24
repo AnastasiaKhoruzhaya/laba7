@@ -3,8 +3,15 @@ using System.Collections.Generic;
 
 
 //Квитанция, Накладная, Документ, Чек, Дата, Организация.
-namespace _5lab
+namespace _6lab
 {
+    partial class Organization : IOperationSet//класс partial во втором файле
+    {
+        public override string ToString()
+        {
+            return "Organization";
+        }
+    }
     abstract class Document
     {
         ////переопределение методов Object
@@ -22,7 +29,6 @@ namespace _5lab
 
         public override bool Equals(object obj)
         {
-            Console.WriteLine("Equals override");
             if (obj.GetType() != this.GetType()) return false;
             else return true;
         }
@@ -42,6 +48,14 @@ namespace _5lab
     }
     class Check : Document, IOperationSet
     {
+        public int year;
+        public int number;
+
+        public Check(int y, int n)
+        {
+            year = y;
+            number = n;
+        }
         string[] IOperationSet.Operations()
         {
             return new string[] { "written, dated, and signed instrument that \n" +
@@ -53,8 +67,19 @@ namespace _5lab
             return "Check";
         }
     }
+    class Product
+    {
+        public string name;
+        public int cost;
+
+        public Product(string n, int c)
+        {
+            name = n; cost = c;
+        }
+    }
     class Waybill : Document, IOperationSet //накладная
     {
+        public List<Product> products = new List<Product>();
         string[] IOperationSet.Operations()
         {
             return new string[] { " document issued by a carrier giving details \n" +
