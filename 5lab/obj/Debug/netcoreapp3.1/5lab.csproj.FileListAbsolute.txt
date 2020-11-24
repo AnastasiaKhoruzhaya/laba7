@@ -1,0 +1,35 @@
+C:\Users\ADMIN\source\repos\5lab\5lab\bin\Debug\netcoreapp3.1\5lab.exe
+C:\Users\ADMIN\source\repos\5lab\5lab\bin\Debug\netcoreapp3.1\5lab.deps.json
+C:\Users\ADMIN\source\repos\5lab\5lab\bin\Debug\netcoreapp3.1\5lab.runtimeconfig.json
+C:\Users\ADMIN\source\repos\5lab\5lab\bin\Debug\netcoreapp3.1\5lab.runtimeconfig.dev.json
+C:\Users\ADMIN\source\repos\5lab\5lab\bin\Debug\netcoreapp3.1\5lab.dll
+C:\Users\ADMIN\source\repos\5lab\5lab\bin\Debug\netcoreapp3.1\5lab.pdb
+C:\Users\ADMIN\source\repos\5lab\5lab\obj\Debug\netcoreapp3.1\5lab.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\5lab\5lab\obj\Debug\netcoreapp3.1\5lab.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\5lab\5lab\obj\Debug\netcoreapp3.1\5lab.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\5lab\5lab\obj\Debug\netcoreapp3.1\5lab.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\5lab\5lab\obj\Debug\netcoreapp3.1\5lab.dll
+C:\Users\ADMIN\source\repos\5lab\5lab\obj\Debug\netcoreapp3.1\5lab.pdb
+C:\Users\ADMIN\source\repos\5lab\5lab\obj\Debug\netcoreapp3.1\5lab.genruntimeconfig.cache
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.exe
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.deps.json
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.runtimeconfig.json
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.runtimeconfig.dev.json
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.dll
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.pdb
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\obj\Debug\netcoreapp3.1\5lab.csprojAssemblyReference.cache
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\obj\Debug\netcoreapp3.1\5lab.AssemblyInfoInputs.cache
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\obj\Debug\netcoreapp3.1\5lab.AssemblyInfo.cs
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\obj\Debug\netcoreapp3.1\5lab.dll
+C:\Users\Asus\Downloads\sadness-master\sadness-master\5lab\obj\Debug\netcoreapp3.1\5lab.pdb
+D:\учеба\ООП\лаба 5\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.exe
+D:\учеба\ООП\лаба 5\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.deps.json
+D:\учеба\ООП\лаба 5\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.runtimeconfig.json
+D:\учеба\ООП\лаба 5\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.runtimeconfig.dev.json
+D:\учеба\ООП\лаба 5\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.dll
+D:\учеба\ООП\лаба 5\sadness-master\5lab\bin\Debug\netcoreapp3.1\5lab.pdb
+D:\учеба\ООП\лаба 5\sadness-master\5lab\obj\Debug\netcoreapp3.1\5lab.csprojAssemblyReference.cache
+D:\учеба\ООП\лаба 5\sadness-master\5lab\obj\Debug\netcoreapp3.1\5lab.AssemblyInfoInputs.cache
+D:\учеба\ООП\лаба 5\sadness-master\5lab\obj\Debug\netcoreapp3.1\5lab.AssemblyInfo.cs
+D:\учеба\ООП\лаба 5\sadness-master\5lab\obj\Debug\netcoreapp3.1\5lab.dll
+D:\учеба\ООП\лаба 5\sadness-master\5lab\obj\Debug\netcoreapp3.1\5lab.pdb
