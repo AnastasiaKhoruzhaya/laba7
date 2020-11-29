@@ -1,40 +1,27 @@
-﻿/*1) Определить иерархию и композицию классов (в соответствии с вариантом),
-реализовать классы. Если необходимо расширьте по своему усмотрению
-иерархию для выполнения всех пунктов л.р.
-Каждый класс должен иметь отражающее смысл название и
-информативный состав. При кодировании должны быть использованы
-соглашения об оформлении кода code convention.
-В одном из классов переопределите все методы, унаследованные от
-Object.
-2) В проекте должны быть интерфейсы и абстрактный класс(ы).
-Использовать виртуальные методы и переопределение.
-3) Сделайте один из классов герметизированным (бесплодным).
-4) Добавьте в интерфейсы (интерфейс) и абстрактный класс одноименные
-методы.
-Дайте в наследуемом классе им разную реализацию и вызовите эти методы.
-5) Написать демонстрационную программу, в которой создаются объекты
-различных классов. Поработать с объектами через ссылки на абстрактные
-классы и интерфейсы. В этом случае для идентификации типов объектов
-использовать операторы is или as.
-6) Во всех классах (иерархии) переопределить метод ToString(), который
-выводит информацию о типе объекта и его текущих значениях.
-7) Создайте дополнительный класс Printer c полиморфным методом
-IAmPrinting( SomeAbstractClassorInterface someobj). Формальным
-параметром метода должна быть ссылка на абстрактный класс или наиболее
-общий интерфейс в вашей иерархии классов. В методе iIAmPrinting
-определите тип объекта и вызовите ToString(). В демонстрационной
-программе создайте массив, содержащий ссылки на разнотипные объекты
-ваших классов по иерархии, а также объект класса Printer и последовательно
-вызовите его метод IAmPrinting со всеми ссылками в качестве аргументов.*/
+﻿/*Дополнить предыдущую лабораторную работу № 6.
+Создать иерархию классов исключений (собственных) – 3 типа и более.
+Сделать наследование пользовательских типов исключений от стандартных
+классов .Net (например, Exception, IndexOutofRange).
+Сгенерировать и обработать как минимум пять различных исключительных
+ситуаций на основе своих и стандартных исключений. Например, не позволять при
+инициализации объектов передавать неверные данные, обрабатывать ошибки при
+работе с памятью и ошибки работы с файлами, деление на ноль, неверный индекс,
+нулевой указатель и т. д.
+В конце поставить универсальный обработчик catch.
+Обработку исключений вынести в main. При обработке выводить
+специфическую информацию о месте, диагностику и причине исключения.
+Последним должен быть блок, который отлавливает все исключения (finally).
+Добавьте код в одной из функций макрос Assert. Объясните что он проверяет, как
+будет выполняться программа в случае не выполнения условия. Объясните
+назначение Assert. */
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Diagnostics;
 
-namespace _6lab
-{/*Собрать Бухгалтерию.
-Найти суммарную стоимость продукции заданного
-наименования по всем накладным, количество чеков.
-Вывести две накладные за указанный период времени*/
+
+namespace _7lab
+{
     class Controller
     {
         public int FindsProduct(Bookkeeping bookkeeping, string name)
@@ -135,37 +122,92 @@ namespace _6lab
     {
         static void Main(string[] args)
         {
-            Days days;
-            days = Days.Monday;
-            for (int i = 0; i < 6; i++)
+            try
             {
-                Console.WriteLine(days);
-                days++;
+                int number = 10;
+                int result = number / 0;
             }
-            Person ann;
-            ann.name = "Ann";
-            ann.age = 19;
-            ann.DisplayInfo();
+            catch (DivideByZeroException) 
+            { 
+                Console.WriteLine("EXCEPTION! You can not divide by zero"); 
+            }
 
-            Product apple = new Product("apple", 30);
-            Product pen = new Product("pen", 10);
-            Product cat = new Product("cat", 1000);
-            Waybill waybill1 = new Waybill();
-            Waybill waybill2 = new Waybill();
-            Check check1 = new Check(1999, 123);
-            Check check2 = new Check(2003, 321);
-            Bookkeeping bookkeeping = new Bookkeeping();
-            bookkeeping.Add(waybill1, check1);
-            bookkeeping.Add(waybill2, check2);
-            waybill1.products.Add(apple); waybill1.products.Add(apple); waybill1.products.Add(pen);
-            waybill2.products.Add(pen); waybill2.products.Add(cat);
-            bookkeeping.Output();
-            Controller controller = new Controller();
-            Console.WriteLine("\nCost of a product: " + controller.FindsProduct(bookkeeping, "cat"));
-            Console.WriteLine("Quantity of checks: " + controller.CheckNumber(bookkeeping));
-            controller.FindDate(bookkeeping);
-            bookkeeping.Remove(1);
-            bookkeeping.Output();
+            try
+            {
+                int[] numbers = new int[3];
+                int index = numbers[10];
+            }
+            catch (IndexOutOfRangeException) 
+            { 
+                Console.WriteLine("EXCEPTION! Wrong index"); 
+            }
+            //receipt
+            try
+            {
+                Receipt person = new Receipt();
+                Console.Write("Enter youur age: ");
+                person.Age = Convert.ToInt32(Console.ReadLine());
+                Debug.Assert(person.Age <= 80);
+            }
+            catch (ReceiptExceptions ex)
+            {
+                Console.WriteLine("Exception: " + ex.message);
+                Console.WriteLine("The place of exeption: " + ex.GetType().FullName);
+                Console.WriteLine("Diagnostics, how to avoid: " + ex.message2);
+            }
+            Console.WriteLine();
+            try
+            {
+                Check person = new Check(1999, 123);
+                Console.Write("Enter youur age: ");
+                person.Age = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (CheckExceptions ex)
+            {
+                Console.WriteLine("Exception: " + ex.message);
+                Console.WriteLine("The place of exeption: " + ex.GetType().FullName);
+                Console.WriteLine("Diagnostics, how to avoid: " + ex.message2);
+            }
+
+            finally
+            {
+                Console.WriteLine("Block finally");
+            }
+            Console.WriteLine();
+
+
+
+            //Days days;
+            //days = Days.Monday;
+            //for (int i = 0; i < 6; i++)
+            //{
+            //    Console.WriteLine(days);
+            //    days++;
+            //}
+            //Person ann;
+            //ann.name = "Ann";
+            //ann.age = 19;
+            //ann.DisplayInfo();
+
+            //Product apple = new Product("apple", 30);
+            //Product pen = new Product("pen", 10);
+            //Product cat = new Product("cat", 1000);
+            //Waybill waybill1 = new Waybill();
+            //Waybill waybill2 = new Waybill();
+            //Check check1 = new Check(1999, 123);
+            //Check check2 = new Check(2003, 321);
+            //Bookkeeping bookkeeping = new Bookkeeping();
+            //bookkeeping.Add(waybill1, check1);
+            //bookkeeping.Add(waybill2, check2);
+            //waybill1.products.Add(apple); waybill1.products.Add(apple); waybill1.products.Add(pen);
+            //waybill2.products.Add(pen); waybill2.products.Add(cat);
+            //bookkeeping.Output();
+            //Controller controller = new Controller();
+            //Console.WriteLine("\nCost of a product: " + controller.FindsProduct(bookkeeping, "cat"));
+            //Console.WriteLine("Quantity of checks: " + controller.CheckNumber(bookkeeping));
+            //controller.FindDate(bookkeeping);
+            //bookkeeping.Remove(1);
+            //bookkeeping.Output();
         }
     }
 }

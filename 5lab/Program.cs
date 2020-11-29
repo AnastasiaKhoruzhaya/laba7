@@ -3,8 +3,26 @@ using System.Collections.Generic;
 
 
 //Квитанция, Накладная, Документ, Чек, Дата, Организация.
-namespace _6lab
+namespace _7lab
 {
+    class ReceiptExceptions : Exception
+    {
+        public ReceiptExceptions(string message)
+        : base(message)
+        { }
+        public string message = "You can't pay receipts until you're 18";
+        public string message2 = "you need to grow up";
+    }
+
+
+    class CheckExceptions : Exception
+    {
+        public CheckExceptions(string message)
+        : base(message)
+        { }
+        public string message = "you can't handle checks until you're 18";
+        public string message2 = "you need to grow up";
+    }
     partial class Organization : IOperationSet//класс partial во втором файле
     {
         public override string ToString()
@@ -45,6 +63,18 @@ namespace _6lab
         {
             return "Receipt";
         }
+        private int age;
+        public int Age
+        {
+            get { return age; }
+            set
+            {
+                if (value < 18)
+                    throw new ReceiptExceptions("You can't pay receipts until you're 18");
+                else
+                    age = value;
+            }
+        }
     }
     class Check : Document, IOperationSet
     {
@@ -65,6 +95,18 @@ namespace _6lab
         public override string ToString()
         {
             return "Check";
+        }
+        private int age;
+        public int Age
+        {
+            get { return age; }
+            set
+            {
+                if (value < 18)
+                    throw new CheckExceptions("you can't handle checks until you're 18");
+                else
+                    age = value;
+            }
         }
     }
     class Product
